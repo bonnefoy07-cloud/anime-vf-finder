@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bonnefoy07-cloud.github.io/anime-vf-finder/sitemap.xml
