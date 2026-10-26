@@ -93,7 +93,7 @@ const animeDetails={
 };
 function detailsHtml(a){
  const d=animeDetails[normalizeTitle(a.title)];
- if(!d)return '<details class="anime-details"><summary>📋 Saisons et épisodes</summary><p>Les détails de cette série restent à compléter.</p><p>La VF et les liens des plateformes sont indiqués séparément sur cette fiche.</p></details>';
+ if(!d)return '<details class="anime-details" open><summary>📋 Saisons et épisodes</summary><p><strong>Nombre de saisons :</strong> à vérifier</p><p><strong>Nombre d’épisodes :</strong> à vérifier</p><p>Les chiffres de cette série ne sont pas encore renseignés.</p><p>La VF et les liens des plateformes sont indiqués séparément sur cette fiche.</p></details>';
  return '<details class="anime-details" open><summary>📋 '+d.seasons.length+' saison(s) · '+d.total+' épisodes</summary><ul>'+d.seasons.map(s=>'<li><strong>'+esc(s.name)+'</strong> : '+s.episodes+' épisodes</li>').join('')+'</ul><p><strong>Total :</strong> '+d.total+' épisodes</p><p><strong>Durée moyenne :</strong> environ '+d.runtime+' min par épisode</p><p><strong>Plateformes référencées :</strong> '+d.platforms.map(esc).join(', ')+'</p><p class="muted">Disponibilité et VF à confirmer selon le catalogue français.</p></details>';
 }
 
